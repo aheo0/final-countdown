@@ -6,10 +6,10 @@ import TitleDisplayer from '../components/TitleDisplayer';
 import SeparatorDisplayer from '../components/SeparatorDisplayer';
 import { Text, View } from '../components/Themed';
 
-export default function TabOneScreen() {
-  const [watchHour, setWatchHour] = React.useState(13);
-  const [watchMinute, setWatchMinute] = React.useState(5);
-  const [watchSecond, setWatchSecond] = React.useState(49);
+export default function TabFourScreen() {
+  const [watchHour, setWatchHour] = React.useState(1);
+  const [watchMinute, setWatchMinute] = React.useState(0);
+  const [watchSecond, setWatchSecond] = React.useState(0);
 
   const watchTextFunction = (time, mod) => {
     var currentTime = time % mod;
@@ -19,7 +19,7 @@ export default function TabOneScreen() {
 
   return (
     <View style={styles.container}>
-      <TitleDisplayer title="Watch"/>
+      <TitleDisplayer title="Custom"/>
       <SeparatorDisplayer/>
       <WatchDisplayer
         hour={watchTextFunction(watchHour, 12)}

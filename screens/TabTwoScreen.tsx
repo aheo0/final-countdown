@@ -1,15 +1,31 @@
 import * as React from 'react';
 import { StyleSheet } from 'react-native';
 
-import EditScreenInfo from '../components/EditScreenInfo';
+import WatchDisplayer from '../components/WatchDisplayer';
+import TitleDisplayer from '../components/TitleDisplayer';
+import SeparatorDisplayer from '../components/SeparatorDisplayer';
 import { Text, View } from '../components/Themed';
 
 export default function TabTwoScreen() {
+  const [watchHour, setWatchHour] = React.useState(0);
+  const [watchMinute, setWatchMinute] = React.useState(0);
+  const [watchSecond, setWatchSecond] = React.useState(0);
+
+  const watchTextFunction = (time, mod) => {
+    var currentTime = time % mod;
+    if (currentTime >= 10) return (String(currentTime));
+    return ("0" + String(currentTime));
+  };
+
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Tab Two</Text>
-      <View style={styles.separator} lightColor="#eee" darkColor="rgba(255,255,255,0.1)" />
-      <EditScreenInfo path="/screens/TabTwoScreen.tsx" />
+      <TitleDisplayer title="Stopwatch"/>
+      <SeparatorDisplayer/>
+      <WatchDisplayer
+        hour={watchTextFunction(watchHour, 12)}
+        minute={watchTextFunction(watchMinute, 60)}
+        second={watchTextFunction(watchSecond, 100)}
+      />
     </View>
   );
 }
@@ -19,14 +35,5 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
-  },
-  title: {
-    fontSize: 20,
-    fontWeight: 'bold',
-  },
-  separator: {
-    marginVertical: 30,
-    height: 1,
-    width: '80%',
-  },
+  }
 });
