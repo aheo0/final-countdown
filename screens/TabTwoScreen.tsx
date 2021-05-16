@@ -21,11 +21,13 @@ export default function TabTwoScreen() {
     <View style={styles.container}>
       <TitleDisplayer title="Stopwatch"/>
       <SeparatorDisplayer/>
-      <WatchDisplayer
-        hour={watchTextFunction(watchHour, 12)}
-        minute={watchTextFunction(watchMinute, 60)}
-        second={watchTextFunction(watchSecond, 100)}
-      />
+      <View style={styles.extraPadding}>
+        <WatchDisplayer
+          hour={watchTextFunction(watchHour, 12)}
+          minute={watchTextFunction(watchMinute, 60)}
+          second={watchTextFunction(watchSecond, 100)}
+        />
+        </View>
     </View>
   );
 }
@@ -35,5 +37,8 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
+  },
+  extraPadding: {
+    top: 43 
   }
 });

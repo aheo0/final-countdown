@@ -19,7 +19,7 @@ export default function WatchDisplayer({ hour, minute, second }: {hour: string, 
             </MonoText>
         </View>
 
-        <Text style={[styles.watchButtons, styles.watchButtonOne]}>seseefe</Text>
+        <Text style={[styles.watchButtons, styles.watchButtonOne]}>sesdfsfdfdsdfsdsffsdseefe</Text>
         <Text style={[styles.watchButtons, styles.watchButtonTwo]}>sesdseefe</Text>
         <Text style={[styles.watchButtons, styles.watchButtonThree]}>seseefe</Text>
         <Text style={[styles.watchButtons, styles.watchButtonFour]}>sesdseefe</Text>
@@ -54,24 +54,27 @@ const styles = StyleSheet.create({
   watchButtons: {
     paddingTop: 0,
     height: 4,
-    width: "5%",
     borderColor: "red",
-    borderWidth: 4
+    borderWidth: 4,
   },
   watchButtonOne: {
     top: -4,
     left: 18,
+    width: "21%",
   },
   watchButtonTwo: {
     top: -12,
     left: 182,
+    width: "25%",
   },
   watchButtonThree: {
     top: -130,
     left: 199,
+    width: "21%",
   },
   watchButtonFour: {
     top: -138,
     left: 18,
+    width: "25%",
   }
 });
